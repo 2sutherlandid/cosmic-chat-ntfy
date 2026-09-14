@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+      - SESSION_SECRET=${SESSION_SECRET}
+      - NTFY_HOST=${NTFY_HOST}
+      - NTFY_TOPIC_PREFIX=${NTFY_TOPIC_PREFIX}
+      - NTFY_BASIC_USER=${NTFY_BASIC_USER}
+      - NTFY_BASIC_PASS=${NTFY_BASIC_PASS}
+      - NTFY_SSE_SUFFIX=${NTFY_SSE_SUFFIX}
+    volumes:
+      - ./:/app
+    depends_on:
+      - coturn
+  coturn:
+    image: instrumentisto/coturn
+    restart: unless-stopped
+    ports:
+      - '3478:3478'
+      - '3478:3478/udp'
+    environment:
+      - REALM=localhost
+      - LISTEN=0.0.0.0
+      - EXTERNAL_IP=127.0.0.1
+    command: ["-n", "--lt-cred-mech"]

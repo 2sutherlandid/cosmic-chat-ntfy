@@ -1,6 +1,6 @@
 {
   "name": "cosmic-chat-ntfy",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Discord-like chat using ntfy.com as backend, with WebRTC signaling and server-side auth and DMs",
   "main": "server.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
+    "eventsource": "^2.2.0",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "node-fetch": "^3.4.1",
