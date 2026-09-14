@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cosmic Chat (ntfy)</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app dark">
+      <aside class="sidebar">
+        <div class="brand">Cosmic</div>
+        <div class="rooms" id="rooms"></div>
+        <button id="createRoomBtn">+ Create Room</button>
+      </aside>
+      <main class="main">
+        <header class="channel-header">
+          <div id="currentRoom"># cosmicgeneral</div>
+          <div class="call-controls">
+            <button id="joinAudio">Audio</button>
+            <button id="joinVideo">Video</button>
+          </div>
+        </header>
+        <section class="messages" id="messages"></section>
+        <footer class="composer">
+          <input id="msgInput" placeholder="Message #cosmicgeneral" />
+          <button id="sendBtn">Send</button>
+        </footer>
+      </main>
+      <aside class="users">
+        <div class="profile" id="profileArea"></div>
+      </aside>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

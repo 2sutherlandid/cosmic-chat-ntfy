@@ -1,0 +1,22 @@
+/* styles.css - simplified Discord-like look */
+:root{
+  --bg:#0f1720;--panel:#0b1220;--muted:#9aa4b2;--accent:#5865f2;--text:#e6eef6
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--bg)}
+.app{display:grid;grid-template-columns:220px 1fr 240px;height:100vh}
+.sidebar{background:var(--panel);padding:12px;display:flex;flex-direction:column}
+.brand{font-weight:700;font-size:18px;margin-bottom:12px}
+.rooms{flex:1;overflow:auto}
+.rooms .room{padding:8px;border-radius:6px;margin-bottom:6px;color:var(--muted);cursor:pointer}
+.rooms .room.active{background:#0f243d;color:white}
+.main{display:flex;flex-direction:column}
+.channel-header{display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.messages{flex:1;padding:16px;overflow:auto}
+.message{margin-bottom:10px}
+.message .author{font-weight:600}
+.composer{display:flex;padding:12px;border-top:1px solid rgba(255,255,255,0.03)}
+.composer input{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:#071022;color:var(--text)}
+.composer button{margin-left:8px;padding:10px 14px;border-radius:8px;background:var(--accent);border:none;color:white}
+.users{background:var(--panel);padding:12px}
+.profile{padding:8px;background:rgba(255,255,255,0.02);border-radius:8px}
